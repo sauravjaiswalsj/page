@@ -33,12 +33,20 @@
         }
 
         /* Header */
-        header {
+        /* header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             padding: 2rem 0;
             position: sticky;
             top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } */
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -62,11 +70,19 @@
         }
 
         /* Navigation */
-        nav {
+        /* nav {
             background: var(--dark-bg);
             padding: 1rem 0;
             position: sticky;
             top: 120px;
+            z-index: 999;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        } */
+        nav {
+            background: var(--dark-bg);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0; /* 👈 TO THIS (0) */
             z-index: 999;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
