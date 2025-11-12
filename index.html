@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSc Distributed AI/Quant Engineer Roadmap 2025-2026</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --dark-bg: #1e293b;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--light-bg);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--dark-bg);
+            padding: 1rem 0;
+            position: sticky;
+            top: 120px;
+            z-index: 999;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Section */
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border: 1px solid var(--border-color);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h3 {
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .card h4 {
+            color: var(--text-secondary);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Week Card */
+        .week-card {
+            background: white;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .week-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .week-dates {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .badge-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .badge-warning {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .badge-danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .badge-secondary {
+            background: var(--text-secondary);
+            color: white;
+        }
+
+        /* Todo List */
+        .todo-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            background: var(--light-bg);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .todo-item:hover {
+            background: #e0f2fe;
+            border-left-color: var(--primary-color);
+        }
+
+        .todo-item.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+            background: #f0fdf4;
+            border-left-color: var(--success-color);
+        }
+
+        .todo-checkbox {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .todo-text {
+            flex: 1;
+        }
+
+        /* Resource Links */
+        .resource-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .resource-item {
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            background: var(--light-bg);
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .resource-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .resource-item a:hover {
+            text-decoration: underline;
+        }
+
+        .resource-icon {
+            margin-right: 0.5rem;
+        }
+
+        /* KPI Section */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .kpi-card h5 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .kpi-card .kpi-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background: var(--light-bg);
+        }
+
+        /* Code Blocks */
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #e11d48;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Blockquote */
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            border-color: var(--success-color);
+            color: #166534;
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border-color: var(--warning-color);
+            color: #92400e;
+        }
+
+        .alert-danger {
+            background: #fef2f2;
+            border-color: var(--danger-color);
+            color: #991b1b;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            border-color: var(--primary-color);
+            color: #1e40af;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top:hover {
+            background: #1d4ed8;
+            transform: translateY(-4px);
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .nav-content {
+                justify-content: center;
+            }
+
+            .week-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, nav, .scroll-top, footer {
+                display: none;
+            }
+
+            .section {
+                display: block !important;
+                page-break-before: always;
+            }
+
+            .card {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Emoji Support */
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 0.3rem;
+        }
+
+        /* Link Styling */
+        a {
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Highlight Important Text */
+        .highlight {
+            background: #fef3c7;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Phase Headers */
+        .phase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .phase-header h2 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* Implementation Steps */
+        .implementation-steps {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .implementation-steps ol {
+            margin-left: 1.5rem;
+        }
+
+        .implementation-steps li {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+        }
+
+        /* Deliverables Box */
+        .deliverables {
+            background: #f0fdf4;
+            border: 2px solid var(--success-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .deliverables h5 {
+            color: var(--success-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Time Allocation */
+        .time-allocation {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .time-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Citation */
+        .citation {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1><span class="emoji">🎓</span>MSc Distributed AI/Quant Engineer Roadmap</h1>
+            <p class="subtitle">Comprehensive 24-Week Journey | November 2025 – May 2026 | Warwick University</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <button class="nav-btn active" onclick="showSection('overview')">📋 Overview</button>
+            <button class="nav-btn" onclick="showSection('phase1')">⚡ Phase 1 (Weeks 1-8)</button>
+            <button class="nav-btn" onclick="showSection('phase2')">🎯 Phase 2 (Weeks 9-16)</button>
+            <button class="nav-btn" onclick="showSection('phase3')">🚀 Phase 3 (Weeks 17-24)</button>
+            <button class="nav-btn" onclick="showSection('resources')">📚 Resources</button>
+            <button class="nav-btn" onclick="showSection('risks')">⚠️ Risk Management</button>
+            <button class="nav-btn" onclick="showSection('success')">🎯 Success Criteria</button>
+            <button class="nav-btn btn-success" onclick="exportProgress()">💾 Export Progress</button>
+            <button class="nav-btn btn-primary" onclick="window.print()">🖨️ Print</button>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar" style="width: 0%;">
+                0% Complete
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Overview Section -->
+        <div id="overview" class="section active">
+            <div class="card">
+                <h2><span class="emoji">📋</span>Executive Summary</h2>
+                <div class="alert alert-info">
+                    <strong>Goal:</strong> Transition from C# to Java/Spring Boot while mastering Distributed Systems theory and AI Engineering, culminating in a portfolio-ready Quant Terminal and dissertation preparation.
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Weeks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">50-70</div>
+                        <div class="stat-label">Hours/Week</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Languages (Java, Python, Go)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100+</div>
+                        <div class="stat-label">Learning Resources</div>
+                    </div>
+                </div>
+
+                <h3>🎯 Primary Technologies</h3>
+                <div style="margin: 1rem 0;">
+                    <span class="badge badge-primary">Java 17+</span>
+                    <span class="badge badge-primary">Spring Boot 3.x</span>
+                    <span class="badge badge-primary">Apache Kafka</span>
+                    <span class="badge badge-primary">Python</span>
+                    <span class="badge badge-primary">Go</span>
+                    <span class="badge badge-secondary">PostgreSQL</span>
+                    <span class="badge badge-secondary">Redis</span>
+                    <span class="badge badge-secondary">Docker</span>
+                    <span class="badge badge-secondary">Kubernetes</span>
+                    <span class="badge badge-secondary">gRPC</span>
+                </div>
+
+                <h3>🎓 Academic Alignment</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Module</th>
+                            <th>Credits (CAT)</th>
+                            <th>Period</th>
+                            <th>Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CS917</strong> Foundations of Computing</td>
+                            <td>15</td>
+                            <td>Term 1 (Weeks 1-8)</td>
+                            <td>Logic, algorithms, complexity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CS908</strong> Research Methods</td>
+                            <td>15</td>
+                            <td>Term 1 (Weeks 1-8)</td>
+                            <td>Literature review, research design</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CS909</strong> Machine Learning</td>
+                            <td>15</td>
+                            <td>Term 2 (Weeks 9-24)</td>
+                            <td>ML algorithms, deep learning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CS924</strong> Agent Based Systems</td>
+                            <td>15</td>
+                            <td>Term 2 (Weeks 9-24)</td>
+                            <td>BDI models, multi-agent systems</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CS922</strong> High Performance Computing</td>
+                            <td>15</td>
+                            <td>Term 2 (Optional)</td>
+                            <td>HPC architecture, parallel programming</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CS907</strong> Dissertation Project</td>
+                            <td>60</td>
+                            <td>Summer (May-Sep 2026)</td>
+                            <td>15,000-word dissertation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-warning">
+                    <strong>⚠️ Risk Level: HIGH</strong><br>
+                    This roadmap requires exceptional time management and commitment. Success rate is achievable for motivated learners with strong fundamentals and proper support systems in place.
+                </div>
+
+                <h3>🚀 Key Outcomes by May 2026</h3>
+                <ul class="todo-list">
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="outcome-1">
+                        <span class="todo-text"><strong>Java/Spring Boot Mastery:</strong> Architecting scalable Spring Boot microservices with integrated Kafka streaming, JPA persistence, and Resilience4j Circuit Breakers</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="outcome-2">
+                        <span class="todo-text"><strong>Distributed Systems Depth:</strong> Mastery of CAP/PACELC, Causality (Vector Clocks), Consistent Hashing (Go implementation), and Resilience/Observability</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="outcome-3">
+                        <span class="todo-text"><strong>AI Engineering & Theory:</strong> Core principles of CS909 (PCA, CNNs, Attention Mechanisms) and CS924 (Autonomous Agent Formalisms)</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="outcome-4">
+                        <span class="todo-text"><strong>Portfolio Ready:</strong> AI-Powered Quant Terminal demonstrating multi-language capability in a high-value financial context</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="outcome-5">
+                        <span class="todo-text"><strong>Dissertation Ready:</strong> Formal Agent Model in Python and Validation Utility in Go complete for Formal Validation of Autonomous Quant Agents</span>
+                    </li>
+                </ul>
+
+                <h3>💪 Motivational Reminders</h3>
+                <blockquote>
+                    "The expert in anything was once a beginner." - Helen Hayes
+                </blockquote>
+                <ul>
+                    <li><strong>You have strong C# fundamentals</strong> - Java will feel familiar</li>
+                    <li><strong>24 weeks is enough</strong> if you stay consistent</li>
+                    <li><strong>Imperfect action beats perfect planning</strong> - start coding Week 1</li>
+                    <li><strong>Learning in public</strong> builds your brand and network</li>
+                    <li><strong>Your dissertation topic is unique and valuable</strong></li>
+                    <li><strong>Companies need Distributed AI engineers</strong> - you're future-proof</li>
+                    <li><strong>Every day you code, you're getting better</strong></li>
+                </ul>
+
+                <div class="alert alert-success">
+                    <strong>🎓 You've got this! 💻🚀</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 1 Section -->
+        <div id="phase1" class="section">
+            <div class="phase-header">
+                <h2>⚡ Phase 1: Java/Spring Acceleration & Distributed Bedrock</h2>
+                <p class="phase-subtitle">Weeks 1-8 (November 2025 – January 2026)</p>
+                <p style="margin-top: 1rem;">This phase aligns with Warwick's Term 1 core modules (CS917 Foundations of Computing, CS908 Research Methods). The primary technical goal is achieving Spring Boot mastery, treating it as a critical C# to Java platform transition project.</p>
+            </div>
+
+            <!-- Week 1 -->
+            <div class="week-card">
+                <div class="week-header">
+                    <div>
+                        <div class="week-title">Week 1: Networking Foundations & Java Basics</div>
+                        <div class="week-dates">November 12-18, 2025</div>
+                    </div>
+                    <div>
+                        <span class="badge badge-primary">Java</span>
+                        <span class="badge badge-secondary">Networking</span>
+                    </div>
+                </div>
+
+                <h4>🎓 Academic Focus</h4>
+                <ul>
+                    <li>Start CS917 Foundations of Computing (Warwick Term 1)</li>
+                    <li>Private study hours: 15-20 hours</li>
+                </ul>
+
+              <h4>🎯 Technical Learning Objectives</h4>
+            <ul>
+                <li><strong>Distributed Systems:</strong> TCP vs UDP, HTTP/2 vs gRPC fundamentals</li>
+                <li><strong>Java Transition:</strong> Spring Dependency Injection (DI) and Inversion of Control (IoC)</li>
+                <li><strong>Network Programming:</strong> Raw socket programming in Java</li>
+            </ul>
+
+            <h4>📚 Learning Resources</h4>
+            <ul class="resource-list">
+                <li class="resource-item">
+                    <span class="resource-icon">📚</span>
+                    <a href="https://pdos.csail.mit.edu/6.824/" target="_blank">MIT 6.824 Distributed Systems</a> - presents abstractions and implementation techniques for engineering distributed systems
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    "Designing Data-Intensive Applications" (DDIA) - Chapter 1-2
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🎥</span>
+                    <a href="https://www.youtube.com/c/HusseinNasser-software-engineering" target="_blank">Hussein Nasser - TCP vs UDP</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📚</span>
+                    <a href="https://spring.academy/" target="_blank">Spring Academy's "Spring Certified Professional"</a> learning path by Craig Walls and Dan Vega
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    "Core Java Volume I" by Cay Horstmann - Chapters 1-5
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🎥</span>
+                    "Master Spring Boot 3 & Spring Framework 6 with Java" by Ranga Karanam - 34-hour comprehensive course
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🔗</span>
+                    <a href="https://start.spring.io/" target="_blank">Spring Initializr</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🔗</span>
+                    <a href="https://www.baeldung.com/spring-boot" target="_blank">Baeldung Spring Boot Basics</a>
+                </li>
+            </ul>
+
+            <h4>💻 Project: TCP Key-Value Store (Phase A)</h4>
+            
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <h5>Concurrent Connections</h5>
+                    <div class="kpi-value">10+</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>Response Time</h5>
+                    <div class="kpi-value">&lt; 50ms</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>Code Coverage</h5>
+                    <div class="kpi-value">&gt; 70%</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>Record Capacity</h5>
+                    <div class="kpi-value">10k</div>
+                </div>
+            </div>
+
+            <h5>✅ Project KPIs:</h5>
+            <ul class="todo-list">
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w1-kpi-1">
+                    <span class="todo-text">Implement basic TCP server accepting client connections</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w1-kpi-2">
+                    <span class="todo-text">Support GET, PUT, DELETE operations</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w1-kpi-3">
+                    <span class="todo-text">Handle concurrent connections (minimum 10 simultaneous clients)</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w1-kpi-4">
+                    <span class="todo-text">Response time: &lt; 50ms for operations on 10k records</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w1-kpi-5">
+                    <span class="todo-text">Code coverage: &gt; 70% with unit tests</span>
+                </li>
+            </ul>
+
+            <div class="implementation-steps">
+                <h5>📋 Detailed Implementation Steps:</h5>
+                <ol>
+                    <li>
+                        <strong>Setup (4 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-1-1">
+                                <span class="todo-text">Create Maven project</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-1-2">
+                                <span class="todo-text">Add dependencies: Java 17+, JUnit 5, SLF4J for logging</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-1-3">
+                                <span class="todo-text">Set up project structure: <code>src/main/java/kvstore/</code></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Core Implementation (12 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-2-1">
+                                <span class="todo-text">TCPServer.java: ServerSocket listener on port 8080</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-2-2">
+                                <span class="todo-text">KVStore.java: ConcurrentHashMap&lt;String, String&gt; for storage</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-2-3">
+                                <span class="todo-text">ClientHandler.java: Runnable for handling client connections</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-2-4">
+                                <span class="todo-text">Protocol.java: Define message format (e.g., "PUT key value\n")</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Testing (4 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-3-1">
+                                <span class="todo-text">Unit tests for KVStore operations</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-3-2">
+                                <span class="todo-text">Integration tests with mock TCP clients</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w1-step-3-3">
+                                <span class="todo-text">Load testing with JMeter (10 concurrent clients)</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="deliverables">
+                <h5>📦 Deliverables:</h5>
+                <ul class="todo-list">
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="w1-del-1">
+                        <span class="todo-text">GitHub repository with complete source code</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="w1-del-2">
+                        <span class="todo-text">README.md with API documentation</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="w1-del-3">
+                        <span class="todo-text">Performance test results screenshot</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="time-allocation">
+                <span class="time-badge">⏱️ Technical: 20 hours</span>
+                <span class="time-badge">📚 Academic: 15-20 hours</span>
+                <span class="time-badge">📊 Total: 35-40 hours</span>
+            </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="week-card">
+            <div class="week-header">
+                <div>
+                    <div class="week-title">Week 2: Concurrency & JVM Internals</div>
+                    <div class="week-dates">November 19-25, 2025</div>
+                </div>
+                <div>
+                    <span class="badge badge-primary">Java Concurrency</span>
+                    <span class="badge badge-secondary">JVM</span>
+                </div>
+            </div>
+
+            <h4>🎓 Academic Focus</h4>
+            <ul>
+                <li>CS917 continued</li>
+                <li>Private study on networking fundamentals</li>
+            </ul>
+
+            <h4>🎯 Technical Learning Objectives</h4>
+            <ul>
+                <li><strong>Concurrency:</strong> Threads, Mutexes, Deadlocks, Race Conditions</li>
+                <li><strong>JVM Internals:</strong> Garbage Collection, Memory Model, Heap vs Stack</li>
+                <li><strong>Thread Pools:</strong> Fixed, Cached, and Scheduled thread pools</li>
+            </ul>
+
+            <h4>📚 Learning Resources</h4>
+            <ul class="resource-list">
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    "Java Concurrency in Practice" by Brian Goetz - Chapters 1-4
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    "Concurrency in Go" by Katherine Cox-Buday - patterns like goroutines that transfer to Java CompletableFutures
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🎥</span>
+                    <a href="https://www.youtube.com/results?search_query=venkat+subramaniam+concurrency" target="_blank">Venkat Subramaniam - Concurrency Patterns</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🔗</span>
+                    <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/" target="_blank">Oracle Java Concurrency Tutorial</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    "Optimizing Java" by Benjamin Evans - Chapters on GC
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🔗</span>
+                    <a href="https://www.baeldung.com/jvm-tutorial" target="_blank">Baeldung JVM Series</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🎥</span>
+                    <a href="https://www.youtube.com/results?search_query=java+memory+management" target="_blank">Java Memory Management - Crash Course</a>
+                </li>
+            </ul>
+
+            <h4>💻 Project: Thread Pool for KV Store</h4>
+
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <h5>Thread Pool Size</h5>
+                    <div class="kpi-value">10</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>Concurrent Requests</h5>
+                    <div class="kpi-value">100</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>No Blocking</h5>
+                    <div class="kpi-value">✓</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>Thread Leaks</h5>
+                    <div class="kpi-value">Zero</div>
+                </div>
+            </div>
+
+            <h5>✅ Project KPIs:</h5>
+            <ul class="todo-list">
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w2-kpi-1">
+                    <span class="todo-text">Implement custom Fixed-Size Thread Pool (size: 10)</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w2-kpi-2">
+                    <span class="todo-text">Graceful shutdown handling</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w2-kpi-3">
+                    <span class="todo-text">Monitor thread pool metrics (active threads, queue size)</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w2-kpi-4">
+                    <span class="todo-text">Handle 100 concurrent requests without blocking</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w2-kpi-5">
+                    <span class="todo-text">No thread leaks (verify with profiling)</span>
+                </li>
+            </ul>
+
+            <div class="implementation-steps">
+                <h5>📋 Implementation Steps:</h5>
+                <ol>
+                    <li>
+                        <strong>Thread Pool Design (6 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-1-1">
+                                <span class="todo-text">FixedThreadPool.java: BlockingQueue + Worker threads</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-1-2">
+                                <span class="todo-text">WorkerThread.java: Runnable that polls queue</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-1-3">
+                                <span class="todo-text">ThreadPoolMetrics.java: Track active/idle threads</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Integration (6 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-2-1">
+                                <span class="todo-text">Refactor TCPServer to use thread pool</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-2-2">
+                                <span class="todo-text">Add connection timeout (30 seconds)</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-2-3">
+                                <span class="todo-text">Implement graceful shutdown (ExecutorService)</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Testing & Profiling (6 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-3-1">
+                                <span class="todo-text">Test with 100 concurrent clients</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-3-2">
+                                <span class="todo-text">Use VisualVM for thread analysis</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w2-step-3-3">
+                                <span class="todo-text">Measure response time degradation under load</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="deliverables">
+                <h5>📦 Deliverables:</h5>
+                <ul class="todo-list">
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="w2-del-1">
+                        <span class="todo-text">Updated GitHub repo with thread pool implementation</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="w2-del-2">
+                        <span class="todo-text">Performance comparison report (before/after thread pool)</span>
+                    </li>
+                    <li class="todo-item">
+                        <input type="checkbox" class="todo-checkbox" data-todo="w2-del-3">
+                        <span class="todo-text">VisualVM screenshots showing thread management</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="time-allocation">
+                <span class="time-badge">⏱️ Technical: 18 hours</span>
+                <span class="time-badge">📚 Academic: 18 hours</span>
+                <span class="time-badge">📊 Total: 36 hours</span>
+            </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="week-card">
+            <div class="week-header">
+                <div>
+                    <div class="week-title">Week 3: Spring Boot REST API & JPA</div>
+                    <div class="week-dates">November 26 - December 2, 2025</div>
+                </div>
+                <div>
+                    <span class="badge badge-primary">Spring Boot</span>
+                    <span class="badge badge-secondary">JPA</span>
+                    <span class="badge badge-secondary">PostgreSQL</span>
+                </div>
+            </div>
+
+            <h4>🎓 Academic Focus</h4>
+            <ul>
+                <li>Distributed Systems: CAP Theorem, PACELC Theorem</li>
+                <li>Study consistency models</li>
+            </ul>
+
+            <h4>🎯 Technical Learning Objectives</h4>
+            <ul>
+                <li><strong>CAP/PACELC:</strong> Understand trade-offs between Consistency, Availability, Partition Tolerance</li>
+                <li><strong>Spring Data JPA:</strong> Entity mapping, repositories, lazy loading</li>
+                <li><strong>REST API Design:</strong> Resource naming, HTTP methods, status codes</li>
+                <li><strong>Database Optimization:</strong> N+1 query problem, batch loading</li>
+            </ul>
+
+            <h4>📚 Learning Resources</h4>
+            <ul class="resource-list">
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    DDIA Chapter 5: Replication
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📄</span>
+                    <a href="https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/" target="_blank">CAP Twelve Years Later: How the Rules Have Changed</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🎥</span>
+                    <a href="https://www.youtube.com/results?search_query=cap+theorem+martin+kleppmann" target="_blank">Martin Kleppmann - CAP Theorem Explained</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">📖</span>
+                    "Java Persistence with Spring Data and Hibernate" - safe development of applications that persist information in databases
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🔗</span>
+                    <a href="https://spring.io/projects/spring-data-jpa" target="_blank">Spring Data JPA Documentation</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🔗</span>
+                    <a href="https://www.baeldung.com/learn-jpa-hibernate" target="_blank">Baeldung JPA/Hibernate Series</a>
+                </li>
+                <li class="resource-item">
+                    <span class="resource-icon">🎥</span>
+                    Spring Boot Microservices Tutorial Series by Programming Techie covers REST-based applications using Spring Boot 3
+                </li>
+            </ul>
+
+            <h4>💻 Project: Scalable Spring Boot REST API</h4>
+
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <h5>API Response Time</h5>
+                    <div class="kpi-value">&lt; 100ms</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>CRUD Operations</h5>
+                    <div class="kpi-value">Complete</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>N+1 Problem</h5>
+                    <div class="kpi-value">Solved</div>
+                </div>
+                <div class="kpi-card">
+                    <h5>HTTP Status Codes</h5>
+                    <div class="kpi-value">Proper</div>
+                </div>
+            </div>
+
+            <h5>✅ Project KPIs:</h5>
+            <ul class="todo-list">
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-1">
+                    <span class="todo-text">RESTful API with CRUD operations (GET, POST, PUT, DELETE)</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-2">
+                    <span class="todo-text">PostgreSQL database integration</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-3">
+                    <span class="todo-text">Solve N+1 query problem with @EntityGraph or JOIN FETCH</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-4">
+                    <span class="todo-text">API response time: &lt; 100ms for single record retrieval</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-5">
+                    <span class="todo-text">Proper HTTP status codes (200, 201, 400, 404, 500)</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-6">
+                    <span class="todo-text">Input validation with @Valid annotations</span>
+                </li>
+                <li class="todo-item">
+                    <input type="checkbox" class="todo-checkbox" data-todo="w3-kpi-7">
+                    <span class="todo-text">Exception handling with @ControllerAdvice</span>
+                </li>
+            </ul>
+
+            <div class="implementation-steps">
+                <h5>📋 Implementation Steps:</h5>
+                <ol>
+                    <li>
+                        <strong>Project Setup (4 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-1-1">
+                                <span class="todo-text">Use Spring Initializr: Spring Web, Spring Data JPA, PostgreSQL, Lombok</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-1-2">
+                                <span class="todo-text">Docker Compose for PostgreSQL</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-1-3">
+                                <span class="todo-text">Configure application.yml (datasource, JPA properties)</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Domain Layer (6 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-2-1">
+                                <span class="todo-text">entities/KeyValue.java: @Entity with id, key, value, createdAt</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-2-2">
+                                <span class="todo-text">repositories/KeyValueRepository.java: JpaRepository&lt;KeyValue, Long&gt;</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-2-3">
+                                <span class="todo-text">DTOs: KeyValueRequest, KeyValueResponse (avoid exposing entities)</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Service Layer (4 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-3-1">
+                                <span class="todo-text">services/KeyValueService.java: Business logic</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-3-2">
+                                <span class="todo-text">Handle transactions with @Transactional</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-3-3">
+                                <span class="todo-text">Implement batch operations</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Controller Layer (4 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-4-1">
+                                <span class="todo-text">controllers/KeyValueController.java</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-4-2">
+                                <span class="todo-text">RESTful endpoints: /api/v1/kv</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-4-3">
+                                <span class="todo-text">Request/Response validation</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-4-4">
+                                <span class="todo-text">Exception handling</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Testing (4 hours)</strong>
+                        <ul class="todo-list">
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-5-1">
+                                <span class="todo-text">Unit tests with Mockito</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-5-2">
+                                <span class="todo-text">Integration tests with @SpringBootTest and TestContainers</span>
+                            </li>
+                            <li class="todo-item">
+                                <input type="checkbox" class="todo-checkbox" data-todo="w3-step-5-3">
+                                <span class="todo-text">API documentation with Swagger/OpenAPI 3</span>
+                            </li>
+                        </ul>
+                    </li>
+                    
